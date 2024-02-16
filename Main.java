@@ -230,3 +230,46 @@ public static Satuhahmo vanhinHahmo(ArrayList<Satuhahmo> hahmot) {
     }
     return vanhinHahmo;
 }
+
+// Ohjelmassa on määritelty rajapintaluokka Astia ja sen toteuttavat luokat Tynnyri ja Pullo.
+
+// Kirjoita metodi
+
+// public static int montakoMahtuu(Astia isoAstia, Astia pieniAstia)
+// joka palauttaa kokonaislukuna tiedon siitä, kuinka monta pientä astiallista mahtuu kokonaan isoon astiaan. 
+
+// Esimerkki metodin kutsumisesta:
+
+// public static void main(String[] args) {
+//     Tynnyri tynnyri = new Tynnyri("tammi", 5.0);
+//     Pullo pullo = new Pullo("jaffa", 1.5);
+    
+//     System.out.println(montakoMahtuu(tynnyri, pullo));
+// }
+// Ohjelma tulostaa:
+
+// 3
+
+public static int montakoMahtuu(Astia isoAstia, Astia pieniAstia){
+    double montako = isoAstia.getTilavuus() / pieniAstia.getTilavuus();
+    return (int) montako;
+}
+
+// Ohjelmassa on määritelty luokka Auto ja sen perivä luokka KuormaAuto.
+
+// Kirjoita metodi
+
+// public static int lastiaYhteensa(ArrayList<Auto> autot)
+// joka saa parametrikseen listan KuormaAuto-olioita. Metodi laskee ja palauttaa 
+// tiedon kuorma-autojen yhteenlasketusta lastista.
+
+// Huomaa, että listan tyyppi on Auto, ei KuormaAuto!
+
+public static int lastiaYhteensa(ArrayList<Auto> autot){
+    double lasti = 0;
+    for (Auto a: autot){
+        KuormaAuto k = (KuormaAuto) a;
+        lasti += k.getLasti();
+    }
+    return (int) lasti;
+}
