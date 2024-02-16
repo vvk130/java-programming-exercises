@@ -140,3 +140,51 @@ class Erityisohjaaja extends Ohjaaja {
         return yhtTunnit;
     }
 }
+
+// Oheisessa ohjelmassa on määritelty luokka Kauppalista. Kirjoita luokka LuomuKauppalista, 
+//joka perii luokan Kauppalista.
+
+// Luokalla tulee olla seuraavat ominaisuudet:
+
+// Konstruktori, jolla ei ole yhtään parametria
+// Ylikirjoitettu metodi annaLista(), joka hyödyntää yliluokan toteutusta. Metodi palauttaa 
+// merkkijonossa kaikki listalle lisätyt tuotteet, joissa esiintyy sana "luomu". 
+// Voit olettaa, että kaikki tuotteet on kirjoitettu kokonaan pienillä kirjaimilla. 
+// Tuotteet on erotettu toisistaan rivinvaihdoilla. Katso mallia esimerkkitulosteesta alla.
+// Esimerkki luokan käytöstä:
+
+// public static void main(String[] args) {
+//     LuomuKauppalista lista = new LuomuKauppalista();
+//     lista.lisaaTuote("porkkanat");
+//     lista.lisaaTuote("luomubanaanit");
+//     lista.lisaaTuote("ananas");
+//     lista.lisaaTuote("luomuvessapaperi");
+    
+//     System.out.println(lista.annaLista());
+// }
+// Ohjelma tulostaa:
+
+// luomubanaanit
+// luomuvessapaperi
+
+class LuomuKauppalista extends Kauppalista {
+
+    public LuomuKauppalista(){
+        super();
+    }
+
+    public String annaLista(){
+        String[] lista = super.annaLista().split("\\s+");
+        String luomut = "";
+        int i = 0;
+        while (i < lista.length) {
+            String s = lista[i];
+            if (s.contains("luomu")) {
+                luomut += s + "\n";
+            }
+            i++;
+        }
+        return luomut; 
+    }
+}
+
