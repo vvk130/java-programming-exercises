@@ -188,3 +188,45 @@ class LuomuKauppalista extends Kauppalista {
     }
 }
 
+
+// Kirjoita luokka Merkkijonoapuri, jolla on seuraavat staattiset metodit:
+
+// int laskeVokaalit(String jono), joka palauttaa parametrina annetun merkkijonon 
+// vokaalien määrän ja
+// int laskeMuut(String jono), joka palauttaa parametrina annetun merkkijono 
+// kaikkien muiden merkkien paitsi vokaalien määrän
+// Voit olettaa, että kaikissa käsiteltävissä merkkijonoissa on vain pieniä kirjaimia.
+
+
+
+// Kirjoita luokka SalainenAgentti, jolla on seuraavat ominaisuudet:
+
+// Konstruktori, joka saa parametrikseen nimen (merkkijono) ja koodin (merkkijono)
+// Havainnointimetodit getNimi ja getKoodi
+// Asetusmetodi setKoodi(String koodi), joka asettaa koodiattribuutin, jos annettu parametri on 
+// sääntöjen mukainen (säännöt alempana); muuten koodiksi asetetaan "000"
+// Staattinen metodi static boolean koodiOk(String koodi), joka palauttaa true, jos koodi on sääntöjen mukainen
+// Koodi on sääntöjen mukainen, jos siinä on tasan kolme numeroa, eikä muita merkkejä. Kahden ensimmäisen 
+// numeron pitää olla nollia.
+
+
+// Ohjelmassa on määritelty luokka Satuhahmo sekä useita muita luokkia, jotka perivät luokan.
+
+// Kirjoita metodi
+
+// public static Satuhahmo vanhinHahmo(ArrayList<Satuhahmo> hahmot)
+// joka saa parametrikseen listan satuhahmon perillisiä. Metodi etsii ja palauttaa listan vanhimman hahmon.
+
+// Huomaa, että luokat eivät nyt toteuta Comparable-rajapintaa, joten vanhin hahmo pitää etsiä jollain muulla tavalla.
+
+public static Satuhahmo vanhinHahmo(ArrayList<Satuhahmo> hahmot) {
+    int vanhin = 0;
+    Satuhahmo vanhinHahmo = hahmot.get(0);
+    for (Satuhahmo s : hahmot){
+        if (vanhin < s.getIka()){
+        vanhin = s.getIka();
+        vanhinHahmo = s;
+        }
+    }
+    return vanhinHahmo;
+}
