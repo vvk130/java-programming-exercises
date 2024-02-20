@@ -422,3 +422,19 @@ public int compareTo(Piste toinenPiste){
         return 1;
     }
 }
+
+// Kirjoita kaksi enum-luokkaa:
+
+// Ilmansuunta ja ValiIlmansuunta
+
+// Ilmansuuntia ovat pohjoinen, etelä, itä ja länsi, ja väli-ilmansuuntia koillinen, kaakko, lounas ja luode.
+
+// Muista oikea nimeämistapa!
+
+enum Ilmansuunta {
+    POHJOINEN, ETELA, ITA, LANSI
+}
+
+enum ValiIlmansuunta{
+    KOILLINEN, KAAKKO, LOUNAS, LUODE
+}
