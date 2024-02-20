@@ -387,3 +387,18 @@ class Laskukone implements Laskin{
         return tulos;
     };
 }
+
+// Ohjelmassa on määritelty luokka Reitti, joka toteuttaa rajanpinnan Comparable.
+
+// Kirjoita metodi
+
+// public static Reitti pisinReitti(ArrayList<Reitti> reitit) 
+// joka palauttaa pisimmän listassa olevan reitin.
+
+// Metodilla ei saa olla sivuvaikutuksia - listaa ei siis saa muuttaa! Huomaa myös, että Reitti-luokalla ei ole havainnointimetodeita.
+
+public static Reitti pisinReitti(ArrayList<Reitti> reitit) {
+    ArrayList<Reitti> reititPituudenMukaan = new ArrayList<>(reitit);
+    Collections.sort(reititPituudenMukaan);
+    return reititPituudenMukaan.get(reititPituudenMukaan.size()-1);
+}
