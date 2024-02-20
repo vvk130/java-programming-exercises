@@ -438,3 +438,37 @@ enum Ilmansuunta {
 enum ValiIlmansuunta{
     KOILLINEN, KAAKKO, LOUNAS, LUODE
 }
+
+// Ohjelmassa on määritelty edellisessä tehtävässä esitelty enum ilmansuuntaa varten.
+
+// Kirjoita luokka Reitti, jolla on seuraavat ominaisuudet:
+
+// Konstruktori, joka saa parametrikseen pituuden (liukuluku) ja suunnan (ilmansuunta-enum)
+// Asetus- ja havainnointimetodit pituudelle ja suunnalle
+
+class Reitti {
+    private double pituus;
+    private Ilmansuunta ilmansuunta;
+    
+    
+    public Reitti(double pituus, Ilmansuunta ilmansuunta){
+        this.pituus = pituus;
+        this.ilmansuunta = ilmansuunta;
+    }
+
+    public double getPituus(){
+        return pituus;
+    }
+
+    public Ilmansuunta getSuunta(){
+        return ilmansuunta;
+    }
+
+    public void setPituus(double luku){
+        pituus = luku;
+    }
+
+    public void setSuunta(Ilmansuunta uusiSuunta){
+        ilmansuunta = uusiSuunta;
+    }
+}
