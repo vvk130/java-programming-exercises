@@ -472,3 +472,27 @@ class Reitti {
         ilmansuunta = uusiSuunta;
     }
 }
+
+
+// Ohjelmassa on määritelty edellisessä tehtävässä kirjoitettu luokka Reitti.
+
+// Kirjoita metodi
+
+// public static ArrayList<Reitti> reititSuuntaan(ArrayList<Reitti> reitit, Ilmansuunta suunta)
+// joka saa parametrikseen listan reittiolioita ja suunnan.
+
+// Metodi palauttaa uudessa listassa ne reitit, jotka kulkevat annettuun suuntaan.
+
+// Reittien järjestyksen uudessa listassa tulee olla sama kuin parametrina annetussa listassa.
+
+public static ArrayList<Reitti> reititSuuntaan(ArrayList<Reitti> reitit, Ilmansuunta suunta){
+    ArrayList<Reitti> finalReitit = new ArrayList<>();
+    for (Reitti r: reitit){
+        if (r.getSuunta() == suunta){
+            finalReitit.add(r);
+        }
+    }
+    return finalReitit;
+}
+
+
