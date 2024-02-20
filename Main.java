@@ -335,3 +335,55 @@ interface Laskin {
     void jaa(int luku);
     double annaTulos();
 }
+
+// Kirjoita nyt luokka Laskukone, joka toteuttaa edellisessä tehtävässä kirjoitetun rajapinnan Laskin.
+// Luokalla tulee olla konstruktori, joka alustaa laskimen alkutilaan (tulos on 0.0).
+// Luokalla on lisäksi rajapinnasta tulevat metodit lisaa, vahenna, kerro ja jaa, jotka kaikki 
+// muuttavat nimensä mukaisesti muistissa olevaa tulosta.
+// Metodi annaTulos() palauttaa muistissa olevan tuloksen.
+// Esimerkki luokan käyttämisestä:
+// Laskukone laskin = new Laskukone();
+// System.out.println(laskin.annaTulos());
+// laskin.lisaa(10);
+// System.out.println(laskin.annaTulos());
+// laskin.vahenna(5);
+// System.out.println(laskin.annaTulos());
+// laskin.kerro(3);
+// System.out.println(laskin.annaTulos());
+// laskin.jaa(2);
+// System.out.println(laskin.annaTulos());
+// Ohjelma tulostaa:
+
+// 0.0
+// 10.0
+// 5.0
+// 15.0
+// 7.5
+
+class Laskukone implements Laskin{
+    private double tulos;
+
+    public Laskukone(){
+        this.tulos = 0.0;
+    }
+
+    public void lisaa(int luku){
+        tulos += luku;
+    };
+
+    public void vahenna(int luku){
+        tulos -= luku;
+    };
+
+    public void kerro(int luku){
+        tulos *= luku;
+    };
+
+    public void jaa(int luku){
+        tulos = tulos / luku;
+    };
+
+    public double annaTulos(){
+        return tulos;
+    };
+}
