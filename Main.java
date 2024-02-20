@@ -495,4 +495,120 @@ public static ArrayList<Reitti> reititSuuntaan(ArrayList<Reitti> reitit, Ilmansu
     return finalReitit;
 }
 
+// Kirjoita uml kaaviio perusteella
 
+class Peli {
+    private String nimi;
+    private int pelaajia;
+    
+    public Peli(String nimi, int pelaajia){
+        this.nimi = nimi;
+        this.pelaajia = pelaajia;
+    }
+    
+    public String getNimi(){
+        return nimi;
+    }
+    
+    public void setNimi(String uusiNimi){
+        nimi = uusiNimi; 
+    }
+    
+    public int getPelaajia(){
+        return pelaajia;
+    }
+    
+    public void setPelaajia(int uudetPelaajia){
+        pelaajia = uudetPelaajia;
+    }
+
+}
+
+// Kirjoita geneerisesti tyyppimääritelty luokka
+
+// Monistaja<T>
+
+// Luokalla tulee olla seuraavat ominaisuudet:
+
+// Konstruktori, joka saa parametrikseen tyyppiä T olevan alkion
+// Asetus ja havainnointimetodit alkiolle (getAlkio ja setAlkio)
+// Metodi ArrayList<T> annaMonta(int maara), joka palauttaa uuden listan. Listan koko on parametrina annettu kokonaisluku, ja jokainen listan alkio on oliossa tallessa oleva alkio.
+// Esimerkki luokan käytöstä:
+
+// public static void main(String[] args) {
+//     Monistaja<String> m1 = new Monistaja<>("abc");
+//     System.out.println(m1.annaMonta(3));
+    
+//     Monistaja<Double> m2 = new Monistaja<>(2.5);
+//     System.out.println(m2.annaMonta(4));
+// }
+// Ohjelma tulostaa:
+
+// [abc, abc, abc]
+// [2.5, 2.5, 2.5, 2.5]
+
+
+// Tutoriaalissa esiteltiin geneerinen luokka Pino.
+
+// Jono on pinoa vastaava tietorakenne. Ero on siinä, että kun pinoon lisätään ja poistetaan alkioita samaan päähän, jonossa alkiot lisätään alkuun mutta poistetaan lopusta (niin kuin jono toimii oikeastikin).
+
+// Kirjoita geneerinen luokka Jono<T>, jolla on seuraavat ominaisuudet:
+
+// Konstruktori, joka ei saa parametreja
+// Metodi void lisaa(T alkio), joka lisää alkion jonoon ensimmäiseksi
+// Metodi T poista(), joka poistaa ja palauttaa jonon viimeisen alkion
+// Metodi boolean onkoAlkioita(), joka palauttaa true, jos jonossa on vähintään yksi alkio
+
+
+
+// Ohjelmassa on määritelty geneerinen rajapintaluokka Vaihtaja.
+
+// Kirjoita rajapinnan toteuttava luokka MerkkijonoVaihtaja, joka sitoo geneerisen tyypin merkkijonoksi (eli luokka MerkkijonoVaihtaja ei ole geneerisesti määritelty).
+
+// MerkkijonoVaihtajasta luotu oli toimii niin, että se pitää sisällää aina vain yhden merkkijonoarvon kerrallaan. Luokalla tulee olla
+
+// Konstruktori, joka saa parametrikseen merkkijonon
+// Toteutus metodille vaihdaArvo: metodi palauttaa vaihtajan nykyisen arvon ja tallentaa sen tilalle parametrina tulleen uuden arvon.
+// Esimerkki luokan käytöstä:
+
+// public static void main(String[] args) {
+//     MerkkijonoVaihtaja vaihtaja = new MerkkijonoVaihtaja("moi");
+    
+//     System.out.println(vaihtaja.vaihdaArvo("heippa"));
+//     System.out.println(vaihtaja.vaihdaArvo("heipparallaa"));
+//     System.out.println(vaihtaja.vaihdaArvo("terve nyt sitten"));
+// }
+// Ohjelma tulostaa:
+
+// moi
+// heippa
+// heipparallaa
+ 
+
+// Kirjoita geneerinen luokka 
+
+// class MinMax<T extends Comparable<T>>
+
+// ...jonka toteuttavan tyypin pitää siis toteuttaa rajapinta Comparable.
+
+// Luokalla on seuraavat ominaisuudet:
+
+// Konstruktori, joka saa parametrikseen listan. Lista sisältää alkioita, joiden tyyppi on T.
+// Metodi public T pienin(), joka palauttaa listan pienimmän alkion
+// Metodi public T suurin(), joka palauttaa listan suurimman alkion
+// Listan alkioiden vertailuun käytetään Comparable-rajapinnan tarjoamia palveluita.
+
+// Vinkki; tutustu luokan Collections API-kuvaukseen - sieltä löytyy pari käyttökelpoista operaatiota suurimman tai pienimmän alkio löytämiseen...
+
+// Huom! Ohjelmoinititehtävän voi ratkaista myös ilman virtoja - niin kuin itse asiassa kaikki virtoihin liittyvät tehtävät. Tehtävissä ei siis pakoteta käyttämään virtoja - kannattaa kuitenkin yritttää ainakin ensin virtojen avulla.
+
+// Ohjelmassa on määritelty luokka Jaakiekkoilija. Tutustu luokan ominaisuuksiin ja kirjoita luokkametodi
+
+// public static void tulosta(ArrayList<Jaakiekkoilija> pelaajat)
+// joka tulostaa virtaa käyttäen listassa olevien pelaajien tiedot tarkalleen alla näkyvän esimerkin mukaisesti. Pisteisiin siis lasketaan mukaan sekä pelaajan syötöt että maalit.
+
+// Esimerkkitulostus:
+
+// Mikko Kahilainen, 21 pistettä
+// Matti Gretzky, 50 pistettä
+// Saku Kamppuri, 5 pistettä
