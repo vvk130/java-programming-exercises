@@ -524,6 +524,32 @@ class Peli {
 
 }
 
+//Toteuta luokkahierarkia
+
+interface Laskin {
+    public double getTulos();
+}
+
+
+class Laskukone implements Laskin {
+    private double tulos;
+    
+    public Laskukone(double tulos){
+        this.tulos = tulos;
+    }
+    
+    public double getTulos(){
+        return tulos;
+    }
+    
+    public void laske(String operaatio, double parametri){
+        if (operaatio == "plus"){
+            tulos += parametri;
+        }
+    }
+}
+
+
 // Kirjoita geneerisesti tyyppimääritelty luokka
 
 // Monistaja<T>
