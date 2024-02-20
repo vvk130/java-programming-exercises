@@ -402,3 +402,23 @@ public static Reitti pisinReitti(ArrayList<Reitti> reitit) {
     Collections.sort(reititPituudenMukaan);
     return reititPituudenMukaan.get(reititPituudenMukaan.size()-1);
 }
+
+// Ohjelmassa on määritelty tutoriaalin alkuosasta tuttu luokka Piste.
+
+// Toteuta luokalle vertailumetodi 
+
+// public int compareTo(Piste toinenPiste)
+// Kahden pisteen vertailuarvona käytetään pisteiden etäisyyttä origosta - mitä suurempi 
+// etäisyys, sen "suurempi" piste.
+
+// Huomaa, että luokalla on jo valmiina tarpeellinen metodi etäisyyden laskemiseksi.
+
+public int compareTo(Piste toinenPiste){
+    if (this.etaisyysOrigosta() == toinenPiste.etaisyysOrigosta()){
+        return 0;
+    } else if (this.etaisyysOrigosta() < toinenPiste.etaisyysOrigosta()) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
