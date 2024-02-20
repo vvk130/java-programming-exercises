@@ -273,3 +273,65 @@ public static int lastiaYhteensa(ArrayList<Auto> autot){
     }
     return (int) lasti;
 }
+// Ohjelmassa on taas määritelty luokka Satuhahmo ja sen perivät luokat 
+// Velho, Veljenpoika ja Supersankari.
+
+// Kirjoita metodi
+
+// public static int laskeVelhot(ArrayList<Satuhahmo> hahmot) 
+// joka saa parametriksi listan eri satuhahmoja, ja 
+// palauttaa listassa olevien velhojen määrän kokonaislukuna.
+
+public static int laskeVelhot(ArrayList<Satuhahmo> hahmot) {
+    int maara = 0;
+    for (Satuhahmo s: hahmot){
+        if (s.getClass() == Velho.class){
+            maara++;
+        }
+    }
+    return maara;
+}
+
+// Ohjelmassa on määritelty luokka Laiva. Luokka Matkustajalaiva perii Laiva-luokan.
+//  Lisäksi luokka Luksusristeilija perii Matkustajalaiva-luokan.
+
+// Laivassa on henkilöstä. Matkustajalaivassa on lisäksi matkustajia. 
+// Luksusristeilijässä on näiden lisäksi myös palvelijoita.
+
+// Tutustu luokkien tarjoamiin havainnointimetodeihin, ja kirjoita sitten metodi
+
+// public static int ihmisiaLaivoissa(ArrayList<Laiva> laivat)
+// joka saa parametrikseen listan eri tyyppisiä laivoja, ja laskee ja 
+// palauttaa kaikkien laivojen kaikkien ihmisten yhteismäärän. Luku sisältää siis henkilöstön, 
+// matkustajat ja palvelijat.
+
+public static int ihmisiaLaivoissa(ArrayList<Laiva> laivat){
+    int maara = 0;
+    for (Laiva l: laivat) {
+        if (l instanceof Laiva) {
+            maara += l.getHenkilosto();
+        }
+        if (l instanceof Matkustajalaiva) {
+            maara += ((Matkustajalaiva) l).getMatkustajat();
+        }
+        if (l instanceof Luksusristeilija) {
+            maara += ((Luksusristeilija) l).getPalvelijat();
+        }
+    }
+    return maara;
+}
+
+
+// Kirjoita rajapintaluokka Laskin. Luokalla on seuraavat ominaisuudet:
+
+// Metodit lisaa, vahenna, kerro ja jaa. Kaikki metodit ovat void-tyyppisiä ja jokainen 
+// saa parametriksi yhden kokonaisluvun.
+// Metodi annaTulos, jolla ei ole parametreja. Metodi palauttaa double-tyyppisen liukuluvun.
+
+interface Laskin {
+    void lisaa(int luku);
+    void vahenna(int luku);
+    void kerro(int luku);
+    void jaa(int luku);
+    double annaTulos();
+}
