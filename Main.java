@@ -549,6 +549,34 @@ class Laskukone implements Laskin {
     }
 }
 
+// Lausekkeiden arvot
+
+Lauseke
+Muuttujan a arvo
+Muuttujan b arvo
+int a = 3;
+int b = a++ + 1;
+4
+4
+int a = 3;
+int b = ++a + 1;
+4
+5
+int a = 1;
+int b = ++a + ++a;
+3
+5
+int a = 3;
+int b = a++ + a--;
+3
+7
+int a = 3;
+int b = --a;
+a = --b;
+1
+1
+
+
 
 // Kirjoita geneerisesti tyyppimääritelty luokka
 
