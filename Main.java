@@ -581,6 +581,24 @@ a = --b;
 List<String> veljekset0 = List.of("Juhani", "Tuomas", "Aapo", "Simeoni", "Timo", "Lauri", "Eero");
 ArrayList<String> veljekset = new ArrayList<>(veljekset0);
 
+//Ohjelmassa on määritelty luokka Jaakiekkoilija. Tutustu luokan ominaisuuksiin ja kirjoita luokkametodi
+//
+//public static void tulosta(ArrayList<Jaakiekkoilija> pelaajat)
+//joka tulostaa virtaa käyttäen listassa olevien pelaajien tiedot tarkalleen alla näkyvän esimerkin mukaisesti. 
+//Pisteisiin siis lasketaan mukaan sekä pelaajan syötöt että maalit.
+//
+//Esimerkkitulostus:
+//
+//Mikko Kahilainen, 21 pistettä
+//Matti Gretzky, 50 pistettä
+//Saku Kamppuri, 5 pistettä
+
+public static void tulosta(ArrayList<Jaakiekkoilija> pelaajat){
+    pelaajat.stream().forEach(hlo -> 
+    System.out.println(hlo.getNimi() + ", " + (hlo.getSyotot()+hlo.getMaalit()) + " pistettä"));
+}
+
+
 // Kirjoita geneerisesti tyyppimääritelty luokka
 
 // Monistaja<T>
