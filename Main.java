@@ -576,7 +576,10 @@ a = --b;
 1
 1
 
+// Lista 7. veljestä
 
+List<String> veljekset0 = List.of("Juhani", "Tuomas", "Aapo", "Simeoni", "Timo", "Lauri", "Eero");
+ArrayList<String> veljekset = new ArrayList<>(veljekset0);
 
 // Kirjoita geneerisesti tyyppimääritelty luokka
 
