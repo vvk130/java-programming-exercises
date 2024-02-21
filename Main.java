@@ -598,6 +598,28 @@ public static void tulosta(ArrayList<Jaakiekkoilija> pelaajat){
     System.out.println(hlo.getNimi() + ", " + (hlo.getSyotot()+hlo.getMaalit()) + " pistettä"));
 }
 
+//Kirjoita ohjelma, joka kyselee käyttäjältä nimiä.
+//
+//Annetut nimet lisätään tiedostoon nimet.txt siten, että jokainen nimi on omalla rivillään.
+//
+//Kun käyttäjä antaa nimeksi "lopeta", ohjelman suoritus päättyy.
+
+Scanner sc = new Scanner(System.in);
+String nimi = "";
+ArrayList<String> rivit = new ArrayList<>();
+while (nimi != "lopeta"){
+    System.out.print("Anna nimi: ");
+    nimi = sc.nextLine();
+    if (nimi != "lopeta"){
+        rivit.add(nimi);
+    }
+}
+
+try (PrintWriter tiedosto = new PrintWriter("nimet.txt")){
+    rivit.stream().forEach(rivi -> tiedosto.write(rivi + "\n"));
+} catch (FileNotFoundException e) {
+    System.out.println("Tapahtui virhe: " + e);
+}
 
 // Kirjoita geneerisesti tyyppimääritelty luokka
 
